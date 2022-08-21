@@ -10,7 +10,7 @@
       "note": "Jonnys Media Setup",
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/JonnySiHI/pcustom",
+        "url": "https://github.com/JonnySiHi/pcustom",
         "stackfile": "jonny.yml"
       }
 }
