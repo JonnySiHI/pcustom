@@ -1,15 +1,130 @@
-    {
-      "type": 3,
-      "title": "Seafile",
-      "name": "seafile",
-      "description": "Seafile is an open-source, cross-platform file-hosting software system. Files are stored on a central server and can be synchronized with personal computers and mobile devices through apps. Files on the Seafile server can also be accessed directly via the server's web interface.",
-      "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/seafile.png",
-      "categories": [
-        "Cloud",
-        "Other"
-      ],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/SelfhostedPro/selfhosted_templates",
-        "stackfile": "Template/Stack/seafile.yml"
-      },
+version: "2.1"
+services:
+  plex:
+    image: lscr.io/linuxserver/plex
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1026
+      - PGID=101
+      - TZ=Europe/London
+      - VERSION=docker
+      - PLEX_CLAIM=claim-9Uq88Bt3pRLrq5Zb3LCy
+    volumes:
+      - /volume1/configs/plex:/config
+      - /volume1/media/tvshows:/data/tvshows
+      - /volume1/media/movies:/data/movies
+    ports:
+      - 32401:32400
+    restart: unless-stopped
+
+  jackett:
+    image: linuxserver/jackett
+    container_name: jackett
+    environment:
+      - PUID=1026
+      - PGID=101
+      - TZ=Europe/London
+    volumes:
+      - /volume1/configs/jackett:/config
+      - /volume1/downloads:/downloads
+    ports:
+      - 9117:9117
+    restart: unless-stopped
+    
+  
+  transmission:
+    image: lscr.io/linuxserver/transmission
+    container_name: transmission
+    environment:
+      - PUID=1026
+      - PGID=101
+      - TZ=Europe/London
+    volumes:
+      - /volume1/configs/transmission:/config
+      - /volume1/downloads:/downloads
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    restart: unless-stopped
+    
+  radarr:
+    image: linuxserver/radarr
+    container_name: radarr
+    environment:
+      - PUID=1026
+      - PGID=101
+      - TZ=Europe/London
+    volumes:
+      - /volume1/configs/radarr:/config
+      - /volume1/media/movies:/movies
+      - /volume1/downloads:/downloads
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+    
+  sabnzbd:
+    image: ghcr.io/linuxserver/sabnzbd
+    container_name: sabnzbd
+    environment:
+      - PUID=1026
+      - PGID=101
+      - TZ=Europe/London
+    volumes:
+      - /volume1/configs/sabnzbd:/config
+      - /volume1/downloads:/downloads
+      - /volume1/downloads/incomplete:/incomplete-downloads #optional
+    ports:
+      - 8181:8080
+      - 9191:9090
+    restart: unless-stopped
+    
+  sonarr:
+    image: linuxserver/sonarr
+    container_name: sonarr
+    environment:
+      - PUID=1026
+      - PGID=101
+      - TZ=Europe/London
+    volumes:
+      - /volume1/configs/sonarr:/config
+      - /volume1/media/tvshows:/tv
+      - /volume1/downloads:/downloads
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+   
+  rdtclient:
+        container_name: rdtclient
+        volumes:
+            - /volume1/downloads:/data/downloads
+            - /volume1/configs/rdtclient:/data/db
+        image: rogerfar/rdtclient
+        restart: always
+        logging:
+            driver: json-file
+            options:
+                max-size: 10m
+        ports:
+            - 6500:6500
+
+  unrar:
+        container_name: unrar
+        volumes:
+            - /volume1/downloads:/data
+        image: lzstealth/unrar
+        restart: always
+        
+  requestrr:
+        image: lscr.io/linuxserver/requestrr:latest
+        container_name: requestrr
+        environment:
+           - PUID=1026
+           - PGID=101
+           - TZ=Europe/London
+        volumes:
+           - /volume1/configs/requestrr:/config
+        ports:
+           - 4545:4545
+        restart: unless-stopped
