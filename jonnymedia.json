@@ -1,6 +1,6 @@
 {
   "version": "2",
-  "templates": [
+  "templates":
 
   {
     "categories": [
@@ -34,5 +34,5 @@
     "title": "JMServer",
     "type": 3
   },
-               ]
+               
 }
