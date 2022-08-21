@@ -1,21 +1,38 @@
 {
   "version": "2",
   "templates": [
- {
-    "type": 3,
-    "title": "JMS",
-    "name": "jms",
-    "description": "Jonnys Media Setup",
-    "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/nextcloud-icon.png",
+
+  {
     "categories": [
-      "Media",
-    ],
+        "Media"
+                  ],
+    "description": "Jonnys Media Setup",
+    "env": [
+        {
+            "default": "1026",
+            "label": "PUID",
+            "name": "PUID"
+        },
+        {
+            "default": "101",
+            "label": "PGID",
+            "name": "PGID"
+        },
+        {
+            "label": "TZ",
+            "name": "TZ"
+        },
+ 
+           ],
+    "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/bookstack2.png",
     "note": "Jonnys Media Setup",
     "platform": "linux",
     "repository": {
-      "url": "https://github.com/JonnySiHI/pcustom",
-      "stackfile": "Template/jonny.yml"
+        "stackfile": "Template/jonny.yml",
+        "url": "https://github.com/JonnySiHI/pcustom"
     },
- }
-]
-}  
+    "title": "Bookstack",
+    "type": 3
+  }
+               ]
+}
