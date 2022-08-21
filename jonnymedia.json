@@ -2,6 +2,6 @@
       "note": "Jonnys Media Setup",
       "platform": "linux",
       "repository": {
-        "stackfile": "Template/Stack/jonny.yml"
+        "stackfile": "Template/jonny.yml"
       }
 }
