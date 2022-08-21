@@ -1,4 +1,8 @@
 {
+  "version": "2",
+  "templates": [
+
+{
       "type": 3,
       "title": "Nextcloud",
       "name": "nextcloud",
