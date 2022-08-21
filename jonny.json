@@ -6,7 +6,7 @@
       "title": "Plex",
       "name": "plex",
       "description": "The best media server so far.",
-      "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/plex.png",
+      "logo": "https://i.imgur.com/P4Rr3CN.jpg",
       "image": "lscr.io/linuxserver/plex:latest",
       "categories": [
         "Music"
