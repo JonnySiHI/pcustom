@@ -1,12 +1,20 @@
 {
   "version": "2",
   "templates": [
-    {
-        "note": "Jonnys Media Setup",
-        "platform": "linux",
-        "repository": {
-          "url": "https://github.com/JonnySiHI/pcustom",
-          "stackfile": "Template/jonny.yml"
-                       }
-  ]
+{
+    "type": 3,
+    "title": "JMS",
+    "name": "jms",
+    "description": "Jonnys Media Setup",
+    "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/nextcloud-icon.png",
+    "categories": [
+      "Media",
+    ],
+    "note": "Jonnys Media Setup",
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/JonnySiHI/pcustom",
+      "stackfile": "Template/jonny.yml"
+    },
+}
 }
