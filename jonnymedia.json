@@ -3,6 +3,6 @@
       "platform": "linux",
       "repository": {
         "url": "https://github.com/JonnySiHI/pcustom",
-        "stackfile": "jonny.yml"
+        "stackfile": "Template/Stack/jonny.yml"
       }
 }
