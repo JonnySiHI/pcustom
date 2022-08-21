@@ -1,4 +1,8 @@
-    {
+{
+  "version": "2",
+  "templates": [    
+
+{
       "type": 3,
       "title": "Jonnys-Media-Setup",
       "name": "jms",
@@ -13,3 +17,5 @@
         "url": "https://github.com/JonnySiHI/pcustom",
         "stackfile": "jonny.yml"
       },
+]
+}
