@@ -1,7 +1,7 @@
     {
       "type": 3,
       "title": "Jonnys-Media-Setup",
-      "name": "jonnys-media-setup",
+      "name": "jms",
       "description": "Jonny",
       "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/nextcloud-icon.png",
       "categories": [
@@ -12,4 +12,4 @@
       "repository": {
         "url": "https://github.com/JonnySiHI/pcustom",
         "stackfile": "jonny.yml"
-      },
+      }
