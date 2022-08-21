@@ -20,4 +20,4 @@
         "url": "https://github.com/SelfhostedPro/selfhosted_templates",
         "stackfile": "Template/Stack/nextcloud.yml"
       },
-      ]
+               ]
