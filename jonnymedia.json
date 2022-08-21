@@ -6,7 +6,7 @@
     "categories": [
         "Media"
                   ],
-    "description": "Jonnys Media Setup",
+    "description": "JMS",
     "env": [
         {
             "default": "1026",
@@ -25,7 +25,7 @@
  
            ],
     "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/bookstack2.png",
-    "note": "Jonnys Media Setup",
+    "note": "JMS",
     "platform": "linux",
     "repository": {
         "stackfile": "Template/jonny.yml",
