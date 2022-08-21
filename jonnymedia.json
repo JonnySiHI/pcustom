@@ -1,8 +1,12 @@
 {
+  "version": "2",
+  "templates": [
+{
       "note": "Jonnys Media Setup",
       "platform": "linux",
       "repository": {
         "url": "https://github.com/JonnySiHI/pcustom",
         "stackfile": "Template/jonny.yml"
-      }
-}
+                     }
+ }
+ }
